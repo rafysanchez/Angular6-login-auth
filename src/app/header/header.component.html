@@ -1,0 +1,79 @@
+<div class="container-fluid">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark" *ngIf="isLoggedIn$ | async as isLoggedIn">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Sistema Condominio</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Moradores/Visitantes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Veiculos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Recados</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+<!-- <nav class="navbar navbar-inverse" *ngIf="isLoggedIn$ | async as isLoggedIn">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Sistema Condominio</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a routerLink="moradoresvisitantes">Moradores/Visitantes</a></li>
+        <li><a routerLink="veiculos">Veiculos</a></li>
+        <li><a routerLink="recados">Recados</a></li>
+        <li><a routerLink="eventos">Eventos</a></li>
+        <li><a routerLink="ocorrencias">Ocorrencias</a></li>
+        <li><a routerLink="relatorios">Relatorios</a></li>
+        <li><a routerLink="sobre">Sobre</a></li>
+        <li><a routerLink="ajuda">Ajuda</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a (click)="onLogout()" *ngIf="isLoggedIn"><span class="glyphicon glyphicon-log-in" ></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<!--
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Sistema Condominio</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a routerLink="MoradoresVisitantes">Moradores/Visitantes</a></li>
+      <li><a routerlink="Veiculos">Veiculos</a></li>
+      <li><a routerlink="Recados">Recados</a></li>
+      <li><a routerlink="Eventos">Eventos</a></li>
+      <li><a routerlink="Ocorrencias">Ocorrencias</a></li>
+      <li><a routerlink="Relatorios">Relatorios</a></li>
+      <li><a routerlink="Sobre">Sobre</a></li>
+      <li><a routerlink="Ajuda">Ajuda</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a routerLink="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+ -->

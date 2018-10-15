@@ -1,5 +1,8 @@
+<app-header> </app-header>
+
+<div class="container">
 <h1>Hi {{currentUser.firstName}}!</h1>
-<p>You're logged in with Angular 6!!</p>
+<p>You're logged in with Angular 6 !!</p>
 <h3>All registered users:</h3>
 <ul>
     <li *ngFor="let user of users">
@@ -8,3 +11,4 @@
     </li>
 </ul>
 <p><a [routerLink]="['/login']">Logout</a></p>
+</div>

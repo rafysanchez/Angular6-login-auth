@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+// tslint:disable-next-line:import-blacklist
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class AuthenticationService {
+
+  private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
     constructor(private http: HttpClient) { }
 
     login(username: string, password: string) {
@@ -13,6 +18,7 @@ export class AuthenticationService {
                 if (user && user.token) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user));
+                    this.loggedIn.next(true);
                 }
 
                 return user;
@@ -23,4 +29,10 @@ export class AuthenticationService {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
     }
+
+    get isLoggedIn() {
+      return this.loggedIn.asObservable();
+    }
+
+
 }
